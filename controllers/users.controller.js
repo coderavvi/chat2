@@ -2,7 +2,7 @@ const { createUser } = require('../services/querries');
 
 function UserController(req, res) {
   try {
-    const { alias, gender } = req.body;
+    const { alias, gender } = req.params;
 
     //   validate user input
     if (!(alias && gender)) {

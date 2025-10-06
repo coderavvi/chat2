@@ -14,7 +14,7 @@ const openai = new openAI.OpenAI({
 
 async function chatsController(req, res) {
   try {
-    const { userId, message } = req.body;
+    const { userId, message } = req.params;
 
     if (!message) {
       return res.status(400).json({ error: 'message cannot be empty' });
@@ -78,7 +78,7 @@ Remember: You're here to support, not to diagnose or treat.`,
 }
 
 async function getAllChatsController(req, res) {
-  const { userId } = req.body;
+  const { userId } = req.params;
 
   // fetch all chats based on userId
   const userChatHistory = await getUserHistory(userId);

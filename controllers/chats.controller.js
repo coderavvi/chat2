@@ -78,7 +78,7 @@ Remember: You're here to support, not to diagnose or treat.`,
 }
 
 async function getAllChatsController(req, res) {
-  const { userId } = req.body;
+  const { userId } = req.params;
 
   // fetch all chats based on userId
   const userChatHistory = await getUserHistory(userId);

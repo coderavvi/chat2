@@ -6,6 +6,6 @@ const chatRouter = express.Router();
 // send message
 chatRouter.post('/send', chatsController.chatsController);
 
-chatRouter.get('/all', chatsController.getAllChatsController);
+chatRouter.get('/all/:userId', chatsController.getAllChatsController);
 
 module.exports = chatRouter;

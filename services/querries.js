@@ -1,5 +1,6 @@
 const db = require('../db/db');
 
+// Get chat history
 function getUserHistory(userId) {
   return new Promise((resolve, reject) => {
     db.all(
@@ -39,6 +40,7 @@ function saveAgentMessage(userId, aimessage) {
   });
 }
 
+// creating a new user
 function createUser(alias, gender) {
   const query = `INSERT INTO users (alias, gender) VALUES (?, ?)`;
 
